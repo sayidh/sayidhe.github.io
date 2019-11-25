@@ -9,6 +9,7 @@ const clean = require('gulp-clean');
 const imagemin = require('gulp-imagemin');
 
 const sass = require("gulp-sass");
+var rename = require('gulp-rename');
 const autoprefixer = require('autoprefixer')
 const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss')
@@ -56,7 +57,8 @@ function styles() {
     .pipe(sourcemaps.init())
     .pipe(sass(sassOptions).on('error', sass.logError))
     .pipe(postcss([ autoprefixer() ]))
-    .pipe(sourcemaps.write('.'))
+    .pipe(sourcemaps.write())
+    .pipe(rename('main.css'))
     .pipe(gulp.dest(paths.styles.dest))
     .pipe(browserSync.stream())
 }
