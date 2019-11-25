@@ -1,0 +1,10 @@
+.DS_Store
+
+# yarn modules
+node_modules/
+
+# sass cache
+.sass-cache/
+
+# Opening file mark
+**.swp
