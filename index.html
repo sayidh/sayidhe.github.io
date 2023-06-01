@@ -9,199 +9,246 @@
   <meta name="description" content="Hi, this is Sayid's personal website.">
   <meta property="og:image" content="http://www.sayidhe.com/assets/images/site_image.png">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="stylesheet" href="stylesheets/css/main.css">
+  <meta http-equiv="Refresh" content="120; url=/wuliao.html" />
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <style type="text/css">
+  	body {
+	  background: #000;
+	  height: 100vh;
+	  overflow: hidden;
+	  display: flex;
+	  font-family: 'Anton', sans-serif;
+	  justify-content: center;
+	  align-items: center;
+	  perspective: 1000px;
+	}
+	div {
+	  transform-style: preserve-3d;
+	}
+	.rail {
+	  position: absolute;
+	  width: 100%;
+	  height: 100%;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  transform: rotateX(-30deg) rotateY(-30deg);
+	}
+	.rail .stamp {
+	  position: absolute;
+	  width: 200px;
+	  height: 200px;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  background: rgba(20, 20, 20, 1);
+	  color: #fff;
+	  font-size: 7rem;
+	}
+	.rail .stamp:nth-child(1) {
+	  animation: stampSlide 40000ms -2300ms linear infinite;
+	}
+	.rail .stamp:nth-child(2) {
+	  animation: stampSlide 40000ms -4300ms linear infinite;
+	}
+	.rail .stamp:nth-child(3) {
+	  animation: stampSlide 40000ms -6300ms linear infinite;
+	}
+	.rail .stamp:nth-child(4) {
+	  animation: stampSlide 40000ms -8300ms linear infinite;
+	}
+	.rail .stamp:nth-child(5) {
+	  animation: stampSlide 40000ms -10300ms linear infinite;
+	}
+	.rail .stamp:nth-child(6) {
+	  animation: stampSlide 40000ms -12300ms linear infinite;
+	}
+	.rail .stamp:nth-child(7) {
+	  animation: stampSlide 40000ms -14300ms linear infinite;
+	}
+	.rail .stamp:nth-child(8) {
+	  animation: stampSlide 40000ms -16300ms linear infinite;
+	}
+	.rail .stamp:nth-child(9) {
+	  animation: stampSlide 40000ms -18300ms linear infinite;
+	}
+	.rail .stamp:nth-child(10) {
+	  animation: stampSlide 40000ms -20300ms linear infinite;
+	}
+	.rail .stamp:nth-child(11) {
+	  animation: stampSlide 40000ms -22300ms linear infinite;
+	}
+	.rail .stamp:nth-child(12) {
+	  animation: stampSlide 40000ms -24300ms linear infinite;
+	}
+	.rail .stamp:nth-child(13) {
+	  animation: stampSlide 40000ms -26300ms linear infinite;
+	}
+	.rail .stamp:nth-child(14) {
+	  animation: stampSlide 40000ms -28300ms linear infinite;
+	}
+	.rail .stamp:nth-child(15) {
+	  animation: stampSlide 40000ms -30300ms linear infinite;
+	}
+	.rail .stamp:nth-child(16) {
+	  animation: stampSlide 40000ms -32300ms linear infinite;
+	}
+	.rail .stamp:nth-child(17) {
+	  animation: stampSlide 40000ms -34300ms linear infinite;
+	}
+	.rail .stamp:nth-child(18) {
+	  animation: stampSlide 40000ms -36300ms linear infinite;
+	}
+	.rail .stamp:nth-child(19) {
+	  animation: stampSlide 40000ms -38300ms linear infinite;
+	}
+	.rail .stamp:nth-child(20) {
+	  animation: stampSlide 40000ms -40300ms linear infinite;
+	}
+	@keyframes stampSlide {
+	  0% {
+	    transform: rotateX(90deg) rotateZ(-90deg) translateZ(-200px) translateY(130px);
+	  }
+	  100% {
+	    transform: rotateX(90deg) rotateZ(-90deg) translateZ(-200px) translateY(-3870px);
+	  }
+	}
+	.world {
+	  transform: rotateX(-30deg) rotateY(-30deg);
+	}
+	.world .forward {
+	  position: absolute;
+	  animation: slide 2000ms linear infinite;
+	}
+	.world .box {
+	  width: 200px;
+	  height: 200px;
+	  transform-origin: 100% 100%;
+	  animation: roll 2000ms cubic-bezier(1, 0.01, 1, 1) infinite;
+	}
+	.world .box .wall {
+	  position: absolute;
+	  width: 200px;
+	  height: 200px;
+	  background: rgba(10, 10, 10, 0.8);
+	  border: 1px solid rgba(250, 250, 250, 1);
+	  box-sizing: border-box;
+	}
+	.world .box .wall::before {
+	  content: '';
+	  position: absolute;
+	  width: 100%;
+	  height: 100%;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  color: #fff;
+	  font-size: 7rem;
+	}
+	.world .box .wall:nth-child(1) {
+	  transform: translateZ(100px);
+	}
+	.world .box .wall:nth-child(2) {
+	  transform: rotateX(180deg) translateZ(100px);
+	}
+	.world .box .wall:nth-child(3) {
+	  transform: rotateX(90deg) translateZ(100px);
+	}
+	.world .box .wall:nth-child(3)::before {
+	  transform: rotateX(180deg) rotateZ(90deg) translateZ(-1px);
+	  animation: zeroFour 4000ms -2000ms linear infinite;
+	}
+	.world .box .wall:nth-child(4) {
+	  transform: rotateX(-90deg) translateZ(100px);
+	}
+	.world .box .wall:nth-child(4)::before {
+	  transform: rotateX(180deg) rotateZ(-90deg) translateZ(-1px);
+	  animation: zeroFour 4000ms -2000ms linear infinite;
+	}
+	.world .box .wall:nth-child(5) {
+	  transform: rotateY(90deg) translateZ(100px);
+	}
+	.world .box .wall:nth-child(5)::before {
+	  transform: rotateX(180deg) translateZ(-1px);
+	  animation: zeroFour 4000ms linear infinite;
+	}
+	.world .box .wall:nth-child(6) {
+	  transform: rotateY(-90deg) translateZ(100px);
+	}
+	.world .box .wall:nth-child(6)::before {
+	  transform: rotateX(180deg) rotateZ(180deg) translateZ(-1px);
+	  animation: zeroFour 4000ms linear infinite;
+	}
+	@keyframes zeroFour {
+	  0% {
+	    content: '4';
+	  }
+	  100% {
+	    content: '0';
+	  }
+	}
+	@keyframes roll {
+	  0% {
+	    transform: rotateZ(0deg);
+	  }
+	  85% {
+	    transform: rotateZ(90deg);
+	  }
+	  87% {
+	    transform: rotateZ(88deg);
+	  }
+	  90% {
+	    transform: rotateZ(90deg);
+	  }
+	  100% {
+	    transform: rotateZ(90deg);
+	  }
+	}
+	@keyframes slide {
+	  0% {
+	    transform: translateX(0);
+	  }
+	  100% {
+	    transform: translateX(-200px);
+	  }
+	}
+
+  </style>
 </head>
 
 <body>
-  <!--[if lt IE 7]>
-        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    <![endif]-->
-
-  <main class="wrapper">
-
-    <!-- 设置页面的锚点，但锚点被选中的时候，页面移动 -->
-    <div class="proxy-anchor" id="p1" aria-hidden="true"></div>
-    <div class="proxy-anchor" id="p2" aria-hidden="true"></div>
-    <div class="proxy-anchor" id="p3" aria-hidden="true"></div>
-    <!-- 页面的锚点 -->
-
-    <div class="grid">
-
-      <div class="item noiseBg" id="item1">
-        <a href="#p1" class="focus-page" tabindex="-1" aria-hidden="true">focus</a>
-
-        <div id="page1" class="layout home">
-
-          <!-- <div class="header">
-            <div id="menuChk" class="wrapper-menu">
-              <div class="line-menu half start"></div>
-              <div class="line-menu"></div>
-              <div class="line-menu half end"></div>
-            </div>
-
-            <nav class="navLink"><a class="underline grow fromLeft" href="http://blog.sayidhe.com">blog</a></nav>
-          </div> -->
-
-          <div class="content">
-            <div class="world">
-              <div class="forward">
-                <div class="box">
-                  <div class="wall"></div>
-                  <div class="wall"></div>
-                  <div class="wall"></div>
-                  <div class="wall"></div>
-                  <div class="wall"></div>
-                  <div class="wall"></div>
-                </div>
-              </div>
-            </div>
-            <h1 class="huge">Hi, I am Sayid.</h1>
-          </div>
-
-          <div class="sidebar">
-            <span class="pagenation">1</span>
-            <span class="pagenation">-</span>
-            <span class="pagenation">3</span>
-          </div>
-
-          <div class="footer">
-            <a href="#p2" class="next-page" tabindex="-1" aria-hidden="true">Next</a>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="item noiseBg" id="item2">
-
-        <a href="#p2" class="focus-page" tabindex="-1" aria-hidden="true">focus</a>
-
-        <div id="page2" class="layout home">
-
-          <!-- <div class="header">
-            <div class="wrapper-menu">
-              <div class="line-menu half start"></div>
-              <div class="line-menu"></div>
-              <div class="line-menu half end"></div>
-            </div>
-            <nav class="navLink"><a class="underline grow fromLeft" href="http://blog.sayidhe.com">blog</a></nav>
-          </div> -->
-
-          <div class="content">
-            <h2 class="sectionTitle">About me</h2>
-            <div class="paragraph">
-              <p class="huge">Sayid is a UI/UX designer and newbie Front-end developer based in Shanghai. </p>
-              <p class="huge">Currently working at Wiredcraft.</p>
-            </div>
-          </div>
-
-          <div class="sidebar">
-            <span class="pagenation">2</span>
-            <span class="pagenation">-</span>
-            <span class="pagenation">3</span>
-          </div>
-
-          <div class="footer">
-            <a href="#p3" class="next-page" tabindex="-1" aria-hidden="true">Next</a>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="item noiseBg" id="item3">
-
-        <a href="#p3" class="focus-page" tabindex="-1" aria-hidden="true">focus</a>
-
-        <div id="page3" class="layout home">
-
-          <!-- <div class="header">
-            <div class="wrapper-menu">
-              <div class="line-menu half start"></div>
-              <div class="line-menu"></div>
-              <div class="line-menu half end"></div>
-            </div>
-            <nav class="navLink"><a class="underline grow fromLeft" href="http://blog.sayidhe.com">blog</a></nav>
-          </div> -->
-
-          <div class="content">
-            <h2 class="sectionTitle">Say Hi~</h2>
-            <ul class="socialLinks">
-              <li class="sns">
-                <a class="underline grow fromLeft" href="http://github.sayidhe.com" target="_blank">Github</a>
-                <span>Design & Coding</span>
-              </li>
-              <li class="sns">
-                <a class="underline grow fromLeft" href="http://blog.sayidhe.com" target="_blank">Blog</a>
-                <span>Personal Thinking</span>
-              </li>
-              <li class="sns">
-                <a class="underline grow fromLeft" href="http://www.instagram.com/sayid.he/" target="_blank">Instagram</a>
-                <span>&#x40;sayid.he</span>
-              </li>
-              <li class="sns">
-                <a class="underline grow fromLeft" href="http://www.linkedin.com/in/sayidhe" target="_blank">Linkedin</a>
-                <span>&#x2197;Sayid He</span>
-              </li>
-              <li class="sns">
-                <a class="underline grow fromLeft" href="mailto:sayidhrq@gmail.com">Email</a>
-                <span>sayidhrq@gmail.com</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="sidebar">
-            <span class="pagenation">3</span>
-            <span class="pagenation">-</span>
-            <span class="pagenation">3</span>
-          </div>
-
-          <div class="footer">
-            <a href="#p1" class="next-page" tabindex="-1" aria-hidden="true">Next</a>
-          </div>
-
-        </div>
-      </div>
-
-
-    </div>
-  </main>
-
-  <!-- <script type="text/javascript" src="js/main.js"></script> -->
-  <script type="text/javascript">
-
-    var wrapperMenu = document.getElementsByClassName('wrapper-menu');
-
-    for (let i = 0; i < wrapperMenu.length; i++) {
-      wrapperMenu[i].addEventListener('click', function(){
-        wrapperMenu[i].classList.toggle('open');
-      })
-    }
-  </script>
-
-  <script>
-    //google analytics
-
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-156086798-3', 'auto');
-    ga('send', 'pageview');
-
-    <!-- Hotjar Tracking Code for http://www.sayidhe.com -->
-    (function(h,o,t,j,a,r){
-      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-      h._hjSettings={hjid:641452,hjsv:5};
-      a=o.getElementsByTagName('head')[0];
-      r=o.createElement('script');r.async=1;
-      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-      a.appendChild(r);
-    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
-
-  </script>
-  
-  <script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+	<div class="rail">
+	    <div class="stamp four">4</div>
+	    <div class="stamp zero">0</div>
+	    <div class="stamp four">4</div>
+	    <div class="stamp zero">0</div>
+	    <div class="stamp four">4</div>
+	    <div class="stamp zero">0</div>
+	    <div class="stamp four">4</div>
+	    <div class="stamp zero">0</div>
+	    <div class="stamp four">4</div>
+	    <div class="stamp zero">0</div>
+	    <div class="stamp four">4</div>
+	    <div class="stamp zero">0</div>
+	    <div class="stamp four">4</div>
+	    <div class="stamp zero">0</div>
+	    <div class="stamp four">4</div>
+	    <div class="stamp zero">0</div>
+	    <div class="stamp four">4</div>
+	    <div class="stamp zero">0</div>
+	    <div class="stamp four">4</div>
+	    <div class="stamp zero">0</div>
+	</div>
+	<div class="world">
+	    <div class="forward">
+	        <div class="box">
+	            <div class="wall"></div>
+	            <div class="wall"></div>
+	            <div class="wall"></div>
+	            <div class="wall"></div>
+	            <div class="wall"></div>
+	            <div class="wall"></div>
+	        </div>
+	    </div>
+	</div>
 </body>
-
-</html>
