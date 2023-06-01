@@ -1,0 +1,120 @@
+/* 此文件用来设置页面的整体的框架和互动 */
+
+@supports (display:grid) {
+
+  .content { padding: 0; }
+  .item a.focus-page { display: block;};
+  .proxy-anchor { display: none;}
+  .footer { display: block; }
+
+  body {
+    font-size: $font-size-n;
+    margin: 0;
+    background: $bg-color;
+    font-family: 'Inter UI', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+
+  // 页面锚点设置
+
+  // 设置 grid 的坐标，来定位每个子内容
+  :target ~ .grid { transform: translate3d( 0, 0, 0); }
+  #p1:target ~ .grid { transform: translate3d( 0, 0, 0); }
+  #p2:target ~ .grid { transform: translate3d( calc(-1 * #{$boxWidth} ), 0, 0); }
+  #p3:target ~ .grid { transform: translate3d( calc(-2 * #{$boxWidth} ), 0, 0); }
+
+  // 移除页面刚加载的时候第一页的放大效果
+
+  *:not(:target) ~ .grid > #item1.item:hover {transform:scale(1); z-index: 10;}
+  #p1:target ~ .grid > #item1.item:hover,
+  #p2:target ~ .grid > #item1.item:hover,
+  #p3:target ~ .grid > #item1.item:hover {transform:scale(1.01); z-index: 100;}
+
+  // 页面被选中的时候移除该页面放大效果
+  #p1:target ~ .grid > #item1.item:hover {transform:scale(1); z-index: 10;}
+  #p2:target ~ .grid > #item2.item:hover {transform:scale(1); z-index: 10;}
+  #p3:target ~ .grid > #item3.item:hover {transform:scale(1); z-index: 10;}
+
+  // 移除页面刚加载的时候第一页的可点效果
+  *:not(:target) ~ .grid > #item1 .focus-page {display:none;}
+  #p1:target ~ .grid > #item1 .focus-page,
+  #p2:target ~ .grid > #item1 .focus-page,
+  #p3:target ~ .grid > #item1 .focus-page {display:block; z-index:2000;}
+
+  // 页面被选中的时候，移除该页面的可点效果
+  #p1:target ~ .grid > #item1 .focus-page {display:none;}
+  #p2:target ~ .grid > #item2 .focus-page {display:none;}
+  #p3:target ~ .grid > #item3 .focus-page {display:none;}
+
+
+  // grid/wrapper 样式
+  .wrapper {
+    transition: transform .4s ease-in-out;
+    position: fixed;
+    width: $wrapperWidth;
+    height: $wrapperHeight;
+    top: 1.5em;
+    left: 1.5em;
+  }
+
+  .grid {
+    position: absolute;
+    transition: transform .7s ease-in-out;
+    width: 300vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, $boxWidth);
+    grid-gap: $spacing-s;
+  }
+
+  // 子元素样式
+  .item {
+    transition: transform .2s ease-in-out;
+  }
+
+  .item:hover {transform:scale(1.01); z-index: 100;}
+
+  .item a.focus-page {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: $boxWidth;
+    height: $boxHeight;
+    opacity: 0;
+    z-index: 100;
+  }
+
+  .wrapper-menu:before {
+    content: "menu";
+    position: absolute;
+  }
+
+  /*手机*/
+
+  // mobile
+  @include bp(mobile) {
+    body {
+      font-size: $font-size-s;
+    }
+  }
+
+
+  /*平板*/
+
+  // iPad
+  @include bp(ipad) {
+
+  }
+
+
+  /*桌面版本*/
+
+  // desktop
+  @include bp(desktop) {
+  }
+
+
+
+}
